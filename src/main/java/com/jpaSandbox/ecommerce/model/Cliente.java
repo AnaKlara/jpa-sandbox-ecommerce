@@ -5,6 +5,8 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
@@ -22,5 +24,7 @@ public class Cliente {
     @Enumerated(EnumType.STRING)
     private SexoCliente sexo;
 
-
+    // não é obrigatório explicitar a classe not-owner do relacionamento
+    @OneToMany(mappedBy = "cliente") // no atributo cliente da classe Pedido está os meta dados do relacionamento
+    private List<Pedido> pedidos;
 }
