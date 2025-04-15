@@ -19,7 +19,11 @@ public class Pedido {
     @Id
     @EqualsAndHashCode.Include
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
+
+    @ManyToOne
+    @JoinColumn(name = "cliente_id")
+    private Cliente cliente;
 
     @Column(name = "data_criacao")
     private LocalDateTime dataCriacao;
@@ -38,7 +42,7 @@ public class Pedido {
     @Enumerated(EnumType.STRING)
     private StatusPedido status;
 
-//    private Long versao;
+    private Long versao;
 
     @Embedded
     private EnderecoEntregaPedido enderecoEntrega;
