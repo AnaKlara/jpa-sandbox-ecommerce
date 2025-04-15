@@ -1,5 +1,6 @@
 package com.jpaSandbox.ecommerce.model;
 
+
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -7,19 +8,18 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.List;
 
-@Getter
-@Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@Setter
+@Getter
 @Entity
-@Table(name = "produto")
-public class Produto {
+@Table(name = "pedido")
+public class Pedido {
 
     @Id
     @EqualsAndHashCode.Include
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(name = "data_criacao")
     private LocalDateTime dataCriacao;
@@ -27,17 +27,21 @@ public class Produto {
     @Column(name = "data_ultima_atualizacao")
     private LocalDateTime dataUltimaAtualizacao;
 
-    private String nome;
+    @Column(name = "data_conclusao")
+    private LocalDateTime dataConclusao;
 
-    private String descricao;
+    @Column(name = "nota_fiscal_id")
+    private Integer notaFiscalId;
 
-    private BigDecimal preco;
+    private BigDecimal total;
 
-    private Byte foto;
+    @Enumerated(EnumType.STRING)
+    private StatusPedido status;
 
-    private Boolean ativo;
+//    private Long versao;
 
-    private List<String> tags;
+    @Embedded
+    private EnderecoEntregaPedido enderecoEntrega;
 
-    private Long versao;
+
 }

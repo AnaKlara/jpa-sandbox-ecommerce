@@ -5,20 +5,21 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
+@Entity
+@Table(name = "estoque")
 @Getter
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@Entity
-@Table(name = "cliente")
-public class Cliente {
+public class Estoque {
 
     @Id
     @EqualsAndHashCode.Include
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nome;
+    private Long quantidade;
 
-    @Enumerated(EnumType.STRING)
-    private SexoCliente sexo;
+    private Long versao;
+
+
 }
