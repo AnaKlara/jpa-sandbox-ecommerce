@@ -14,20 +14,17 @@ import java.util.Date;
 @Table(name = "nota_fiscal")
 public class NotaFiscal {
 
-    @Id
     @EqualsAndHashCode.Include
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(name = "pedido_id")
-    private Integer pedidoId;
+    private Integer id;
 
     private String xml;
 
     @Column(name = "data_emissao")
     private Date dataEmissao;
 
-    @OneToOne
+    @OneToOne(optional = false)
     @JoinColumn(name = "pedido_id") // Esta classe tem o atributo que faz dela o owner do relacionamento
     private Pedido pedido;
 
