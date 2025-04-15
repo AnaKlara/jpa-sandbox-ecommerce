@@ -51,5 +51,10 @@ public class Pedido {
     @Embedded
     private EnderecoEntregaPedido enderecoEntrega;
 
+    @OneToOne(mappedBy = "pedido")
+    private PagamentoCartao pagamento;
+
+    @OneToOne(mappedBy = "pedido")
+    private NotaFiscal notaFiscal;
 
 }

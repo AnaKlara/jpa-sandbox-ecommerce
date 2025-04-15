@@ -19,17 +19,15 @@ public class Categoria {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private Long versao;
-
     private String nome;
 
     @ManyToOne
     @JoinColumn(name = "categoria_pai_id")
     private Categoria categoriaPai;
 
-    @OneToMany(mappedBy = "categoriaPai")
+    @OneToMany(mappedBy = "categoriaPai") //nome da propriedade na classe
     private List<Categoria> categorias;
 
-    @ManyToMany(mappedBy = "categorias")
+    @ManyToMany(mappedBy = "categorias") //nome da propriedade na classe
     private List<Produto> produtos;
 }

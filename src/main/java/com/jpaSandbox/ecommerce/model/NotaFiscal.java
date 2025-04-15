@@ -19,10 +19,17 @@ public class NotaFiscal {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Byte xml;
+    @Column(name = "pedido_id")
+    private Integer pedidoId;
+
+    private String xml;
 
     @Column(name = "data_emissao")
     private Date dataEmissao;
+
+    @OneToOne
+    @JoinColumn(name = "pedido_id") // Esta classe tem o atributo que faz dela o owner do relacionamento
+    private Pedido pedido;
 
     private Integer versao;
 }

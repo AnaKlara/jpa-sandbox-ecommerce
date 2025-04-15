@@ -38,12 +38,4 @@ public class Produto {
             joinColumns = @JoinColumn(name = "produto_id"),
             inverseJoinColumns = @JoinColumn(name = "categoria_id"))
     private List<Categoria> categorias;
-
-    private Byte foto;
-
-    private Boolean ativo;
-
-    private List<String> tags;
-
-    private Long versao;
 }
