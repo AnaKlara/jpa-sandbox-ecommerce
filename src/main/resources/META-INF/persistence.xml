@@ -6,13 +6,13 @@
     <persistence-unit name="Ecommerce-PU">
         <properties>
             <property name="jakarta.persistence.jdbc.url"
-                      value="jdbc:mysql://localhost/algaworks_ecommerce?createDatabaseIfNotExist=true&amp;useTimezone=true&amp;serverTimezone=UTC" />
+                      value="jdbc:mysql://localhost/sandbox_ecommerce?createDatabaseIfNotExist=true&amp;useTimezone=true&amp;serverTimezone=UTC" />
             <property name="jakarta.persistence.jdbc.user" value="root" />
             <property name="jakarta.persistence.jdbc.password" value="100@Mysql" />
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
 
             <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
-            <property name="jakarta.persistence.sql-load-script-source" value="META-INF/banco-de-dados/dados-iniciais.sql"/>
+            <property name="jakarta.persistence.sql-load-script-source" value="META-INF/databases/startup-data.sql"/>
 
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
 

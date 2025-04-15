@@ -20,6 +20,4 @@ public class Estoque {
     private Long quantidade;
 
     private Long versao;
-
-
 }

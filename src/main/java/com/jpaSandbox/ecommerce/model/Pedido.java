@@ -22,7 +22,7 @@ public class Pedido {
     private Integer id;
 
     @ManyToOne
-    @JoinColumn(name = "cliente_id")
+    @JoinColumn(name = "cliente_id") // sempre a classe que tem a propriedade anotada com joincolum é a dona do relacionamento
     private Cliente cliente;
 
     @Column(name = "data_criacao")
