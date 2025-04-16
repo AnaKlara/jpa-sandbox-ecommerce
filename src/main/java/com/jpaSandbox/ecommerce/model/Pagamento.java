@@ -8,7 +8,7 @@ import lombok.Setter;
 @Setter
 @DiscriminatorColumn(name = "tipo_pagamento",
         discriminatorType = DiscriminatorType.STRING)
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @Entity
 @Table(name = "pagamento")
 public abstract class Pagamento extends EntidadeBaseInteger {

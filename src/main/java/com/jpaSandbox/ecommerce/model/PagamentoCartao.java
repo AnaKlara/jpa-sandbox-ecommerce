@@ -6,9 +6,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Entity
-@Table(name = "pagamento_cartao")
 @DiscriminatorValue("cartao")
+@Entity
 public class PagamentoCartao extends Pagamento {
 
     @Column(name = "numero_cartao")
