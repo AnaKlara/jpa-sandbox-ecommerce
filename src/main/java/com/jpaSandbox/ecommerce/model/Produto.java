@@ -54,4 +54,8 @@ public class Produto {
     @CollectionTable(name = "produto_atributo",
             joinColumns = @JoinColumn(name = "produto_id"))
     private List<Atributo> atributos;
+
+    @Lob // https://docs.jboss.org/hibernate/orm/6.0/userguide/html_single/Hibernate_User_Guide.html#basic-bytearray
+    @Column(length = 1000)
+    private byte[] foto;
 }
