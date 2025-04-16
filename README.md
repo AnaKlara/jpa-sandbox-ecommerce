@@ -58,7 +58,7 @@ Execute o projeto:
 Se estiver usando Maven:
 
 ```bash
-./mvnw spring-boot:run
+    ./mvnw spring-boot:run
 ```
 
 Ou rode pela sua IDE (IntelliJ, Eclipse, VS Code)

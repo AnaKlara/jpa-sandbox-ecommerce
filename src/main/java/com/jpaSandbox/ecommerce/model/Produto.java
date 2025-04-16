@@ -1,5 +1,7 @@
 package com.jpaSandbox.ecommerce.model;
 
+import com.jpaSandbox.ecommerce.listener.GenericoListener;
+
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -13,6 +15,7 @@ import java.util.List;
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
+@EntityListeners({ GenericoListener.class})
 @Table(name = "produto")
 public class Produto {
 
