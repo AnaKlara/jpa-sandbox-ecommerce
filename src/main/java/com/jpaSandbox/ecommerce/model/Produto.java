@@ -13,16 +13,16 @@ import java.util.List;
 
 @Getter
 @Setter
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+//@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
 @EntityListeners({ GenericoListener.class})
 @Table(name = "produto")
-public class Produto {
+public class Produto extends EntidadeBaseInteger{
 
-    @Id
-    @EqualsAndHashCode.Include
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+//    @Id
+//    @EqualsAndHashCode.Include
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private Integer id;
 
     @Column(name = "data_criacao", updatable = false)
     private LocalDateTime dataCriacao;

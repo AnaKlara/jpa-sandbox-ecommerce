@@ -12,18 +12,18 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+//@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Setter
 @Getter
 @Entity
 @EntityListeners({GerarNotaFiscalListener.class , GenericoListener.class})
 @Table(name = "pedido")
-public class Pedido {
+public class Pedido extends EntidadeBaseInteger{
 
-    @Id
-    @EqualsAndHashCode.Include
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+//    @Id
+//    @EqualsAndHashCode.Include
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private Integer id;
 
     @ManyToOne
     @JoinColumn(name = "cliente_id") // sempre a classe que tem a propriedade anotada com joincolum é a dona do relacionamento

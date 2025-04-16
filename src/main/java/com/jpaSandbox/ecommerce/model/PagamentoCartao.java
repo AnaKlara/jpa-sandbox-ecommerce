@@ -7,15 +7,15 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+//@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
 @Table(name = "pagamento_cartao")
-public class PagamentoCartao {
+public class PagamentoCartao extends EntidadeBaseInteger{
 
-    @Id
-    @EqualsAndHashCode.Include
-    @Column(name = "pedido_id") // já que o relacionamento é 1:1 a entidade pode ter o mesmo ID
-    private Integer id;
+//    @Id
+//    @EqualsAndHashCode.Include
+//    @Column(name = "pedido_id") // já que o relacionamento é 1:1 a entidade pode ter o mesmo ID
+//    private Integer id;
 
     @Column(name = "numero_cartao")
     private String numeroCartao;

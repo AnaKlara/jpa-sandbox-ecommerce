@@ -7,17 +7,16 @@ import lombok.Setter;
 
 import java.util.List;
 
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Getter
 @Setter
 @Entity
 @Table(name = "categoria")
-public class Categoria {
+public class Categoria extends EntidadeBaseInteger {
 
-    @Id
-    @EqualsAndHashCode.Include
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+//    @Id
+//    @EqualsAndHashCode.Include
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private Integer id;
 
     private String nome;
 

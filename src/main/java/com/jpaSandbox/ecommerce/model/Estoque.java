@@ -9,13 +9,13 @@ import lombok.Setter;
 @Table(name = "estoque")
 @Getter
 @Setter
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Estoque {
+//@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+public class Estoque extends EntidadeBaseInteger{
 
-    @Id
-    @EqualsAndHashCode.Include
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+//    @Id
+//    @EqualsAndHashCode.Include
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private Long id;
 
     @OneToOne(optional = false)
     @JoinColumn(name = "produto_id")
