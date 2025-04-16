@@ -1,10 +1,8 @@
 package com.jpaSandbox.ecommerce.model;
 
-
 import com.jpaSandbox.ecommerce.listener.GenericoListener;
 import com.jpaSandbox.ecommerce.listener.GerarNotaFiscalListener;
 import jakarta.persistence.*;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -58,8 +56,6 @@ public class Pedido extends EntidadeBaseInteger{
         return StatusPedido.PAGO.equals(status);
     }
 
-    //    @PrePersist
-//    @PreUpdate
     public void calcularTotal() {
         if (itens != null) {
             total = itens.stream().map(ItemPedido::getPrecoProduto)

@@ -7,7 +7,6 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-//@Table(name = "pagamento") // será ignorada por conta da anotação @Inheritance
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS) // cada classe que extender Pagamento terá a própria tabela
 public abstract class Pagamento extends EntidadeBaseInteger {
 

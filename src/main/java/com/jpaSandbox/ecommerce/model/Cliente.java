@@ -1,7 +1,6 @@
 package com.jpaSandbox.ecommerce.model;
 
 import jakarta.persistence.*;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,11 +14,6 @@ import java.util.Map;
 @Entity
 @Table(name = "cliente")
 public class Cliente extends EntidadeBaseInteger {
-
-//    @Id
-//    @EqualsAndHashCode.Include
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    private Long id;
 
     private String nome;
 
