@@ -10,6 +10,7 @@ import java.time.LocalDate;
 @Setter
 @Entity
 @Table(name = "pagamento_boleto")
+@DiscriminatorValue("boleto")
 public class PagamentoBoleto extends Pagamento {
 
     @Column(name = "data_vencimento")
