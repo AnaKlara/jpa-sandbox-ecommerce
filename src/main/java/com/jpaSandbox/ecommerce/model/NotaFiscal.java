@@ -19,7 +19,9 @@ public class NotaFiscal {
     @Column(name = "pedido_id") // já que o relacionamento é 1:1 a entidade pode ter o mesmo ID
     private Integer id;
 
-    private String xml;
+    @Lob // https://docs.jboss.org/hibernate/orm/6.0/userguide/html_single/Hibernate_User_Guide.html#basic-bytearray
+    @Column(length = 1000)
+    private byte[] xml;
 
     @Column(name = "data_emissao")
     private Date dataEmissao;

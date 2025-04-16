@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.Map;
 
 @Getter
 @Setter
@@ -21,6 +22,12 @@ public class Cliente {
 
     private String nome;
 
+    @ElementCollection
+    @CollectionTable(name = "cliente_contato", joinColumns = @JoinColumn(name = "cliente_id"))
+    @MapKeyColumn(name = "tipo")
+    @Column(name = "descricao")
+    private Map<String, String> contatos;
+
     @Transient // campo ignorado pelo JPA
     private String primeiroNome;
 
@@ -31,7 +38,7 @@ public class Cliente {
     @OneToMany(mappedBy = "cliente") // no atributo cliente da classe Pedido está os meta dados do relacionamento
     private List<Pedido> pedidos;
 
-    @PostLoad // toda vez que carregar da base de dados
+    @PostLoad // todas as vezes que carregar da base de dados
     public void configurarPrimeiroNome(){
         if(nome != null && !nome.isBlank()) {
             int index = nome.indexOf(" ");
