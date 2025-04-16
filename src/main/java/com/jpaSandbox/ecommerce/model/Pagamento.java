@@ -7,10 +7,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "pagamento")
-@DiscriminatorColumn(name = "tipo_pagamento",
-        discriminatorType = DiscriminatorType.STRING)
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE) // vai juntar todas as propriedades das classes que herdarem Pagamento em uma única tabela
+//@Table(name = "pagamento") // será ignorada por conta da anotação @Inheritance
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS) // cada classe que extender Pagamento terá a própria tabela
 public abstract class Pagamento extends EntidadeBaseInteger {
 
     @MapsId

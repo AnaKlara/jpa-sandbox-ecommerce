@@ -9,8 +9,8 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Entity
-@DiscriminatorValue("boleto")
-@Table(name = "pagamento_boleto") // está sendo ignorada por conta da anotação @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+//@DiscriminatorValue("boleto")
+@Table(name = "pagamento_boleto")
 public class PagamentoBoleto extends Pagamento {
 
     @Column(name = "data_vencimento")
