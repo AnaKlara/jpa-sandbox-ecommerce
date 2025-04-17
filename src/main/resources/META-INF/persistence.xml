@@ -13,6 +13,7 @@
 
             <property name="jakarta.persistence.schema-generation.database.action"
                       value="drop-and-create"/>
+<!--value="none"-->
 
             <property name="jakarta.persistence.schema-generation.create-source"
                       value="metadata-then-script"/>
@@ -20,19 +21,19 @@
                       value="metadata-then-script"/>
 
             <property name="jakarta.persistence.schema-generation.create-script-source"
-                      value="META-INF/banco-de-dados/script-criacao.sql"/>
+                      value="META-INF/databasesos/creation-script.sql"/>
             <property name="jakarta.persistence.schema-generation.drop-script-source"
-                      value="META-INF/banco-de-dados/script-remocao.sql"/>
+                      value="META-INF/databases/drop-script.sql"/>
 
             <property name="jakarta.persistence.sql-load-script-source"
-                      value="META-INF/banco-de-dados/dados-iniciais.sql"/>
+                      value="META-INF/databases/startup-data.sql"/>
 
             <property name="jakarta.persistence.schema-generation.scripts.action"
                       value="none"/>
             <property name="jakarta.persistence.schema-generation.scripts.create-target"
-                      value="C:/tmp/sql/script-criacao-exportado.sql"/>
+                      value="/home/ana/Documents/sql_scripts/script-criacao-exportado.sql"/>
             <property name="jakarta.persistence.schema-generation.scripts.drop-target"
-                      value="C:/tmp/sql/script-remocao-exportado.sql"/>
+                      value="/home/ana/Documents/sql_scriptsscript-remocao-exportado.sql"/>
 
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
 

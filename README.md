@@ -80,5 +80,6 @@ Ou rode pela sua IDE (IntelliJ, Eclipse, VS Code)
 
 https://docs.jboss.org/hibernate/orm/6.0/userguide/html_single/Hibernate_User_Guide.html#basic-bytearray
 
+https://docs.oracle.com/javaee/6/api/javax/persistence/CascadeType.html
 
-
+[JPQL Reference](https://docs.oracle.com/html/E13946_04/ejb3_langref.html)
