@@ -76,4 +76,9 @@ Ou rode pela sua IDE (IntelliJ, Eclipse, VS Code)
 ![JPA Entity Lifecycle](docs/entity-lifecycle.png)
 
 
+## 🔗 Links Úteis
+
+https://docs.jboss.org/hibernate/orm/6.0/userguide/html_single/Hibernate_User_Guide.html#basic-bytearray
+
+
 

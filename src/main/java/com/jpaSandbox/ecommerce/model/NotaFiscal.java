@@ -13,10 +13,10 @@ import java.util.Date;
 public class NotaFiscal extends EntidadeBaseInteger{
 
     @Lob // https://docs.jboss.org/hibernate/orm/6.0/userguide/html_single/Hibernate_User_Guide.html#basic-bytearray
-    @Column(length = 1000)
+    @Column(length = 1000, nullable = false)
     private byte[] xml;
 
-    @Column(name = "data_emissao")
+    @Column(name = "data_emissao", nullable = false)
     private Date dataEmissao;
 
     @MapsId // já vem com o insertable e o updatable

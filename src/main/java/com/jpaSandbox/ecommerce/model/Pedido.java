@@ -21,7 +21,7 @@ public class Pedido extends EntidadeBaseInteger{
     @JoinColumn(name = "cliente_id") // sempre a classe que tem a propriedade anotada com joincolum é a dona do relacionamento
     private Cliente cliente;
 
-    @Column(name = "data_criacao", updatable = false)
+    @Column(name = "data_criacao", updatable = false, nullable = false)
     private LocalDateTime dataCriacao;
 
     @Column(name = "data_ultima_atualizacao", insertable = false)
@@ -36,6 +36,7 @@ public class Pedido extends EntidadeBaseInteger{
     private BigDecimal total;
 
     @Enumerated(EnumType.STRING)
+    @Column(length = 30, nullable = false)
     private StatusPedido status;
 
     private Long versao;
