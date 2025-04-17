@@ -18,7 +18,7 @@ import java.util.List;
 public class Pedido extends EntidadeBaseInteger{
 
     @ManyToOne
-    @JoinColumn(name = "cliente_id") // sempre a classe que tem a propriedade anotada com joincolum é a dona do relacionamento
+    @JoinColumn(name = "cliente_id", nullable = false, foreignKey = @ForeignKey(name = "fk_pedido_cliente")) // sempre a classe que tem a propriedade anotada com joincolum é a dona do relacionamento
     private Cliente cliente;
 
     @Column(name = "data_criacao", updatable = false, nullable = false)

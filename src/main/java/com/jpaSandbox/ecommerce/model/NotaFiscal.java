@@ -21,7 +21,7 @@ public class NotaFiscal extends EntidadeBaseInteger{
 
     @MapsId // já vem com o insertable e o updatable
     @OneToOne(optional = false)
-    @JoinColumn(name = "pedido_id") // Esta classe tem o atributo que faz dela o owner do relacionamento
+    @JoinColumn(name = "pedido_id", nullable = false, foreignKey = @ForeignKey(name = "fk_nota_fiscal_pedido")) // Esta classe tem o atributo que faz dela o owner do relacionamento
     private Pedido pedido;
 
     private Integer versao;

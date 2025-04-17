@@ -19,12 +19,12 @@ public class ItemPedido {
 
     @MapsId("pedidoId") // ja vem com insertable = false, updatable = false
     @ManyToOne(optional = false)
-    @JoinColumn(name = "pedido_id")
+    @JoinColumn(name = "pedido_id", nullable = false, foreignKey = @ForeignKey(name = "fk_item_pedido_pedido"))
     private Pedido pedido;
 
-    @MapsId("produtoId")
+    @MapsId("produtoId") // indica que esta coluna faz parte da PK
     @ManyToOne(optional = false)
-    @JoinColumn(name = "produto_id")
+    @JoinColumn(name = "produto_id", nullable = false, foreignKey = @ForeignKey(name = "fk_item_pedido_produto"))
     private Produto produto;
 
     @Column(name = "preco_produto", nullable = false)

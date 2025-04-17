@@ -25,7 +25,9 @@ public class Cliente extends EntidadeBaseInteger {
     private String cpf;
 
     @ElementCollection
-    @CollectionTable(name = "cliente_contato", joinColumns = @JoinColumn(name = "cliente_id"))
+    @CollectionTable(name = "cliente_contato",
+            joinColumns = @JoinColumn(name = "cliente_id", nullable = false,
+                    foreignKey = @ForeignKey(name = "fk_cliente_contato_cliente")))
     @MapKeyColumn(name = "tipo")
     @Column(name = "descricao")
     private Map<String, String> contatos;
