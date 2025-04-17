@@ -11,8 +11,28 @@
             <property name="jakarta.persistence.jdbc.password" value="100@Mysql" />
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
 
-            <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
-            <property name="jakarta.persistence.sql-load-script-source" value="META-INF/databases/startup-data.sql"/>
+            <property name="jakarta.persistence.schema-generation.database.action"
+                      value="drop-and-create"/>
+
+            <property name="jakarta.persistence.schema-generation.create-source"
+                      value="metadata-then-script"/>
+            <property name="jakarta.persistence.schema-generation.drop-source"
+                      value="metadata-then-script"/>
+
+            <property name="jakarta.persistence.schema-generation.create-script-source"
+                      value="META-INF/banco-de-dados/script-criacao.sql"/>
+            <property name="jakarta.persistence.schema-generation.drop-script-source"
+                      value="META-INF/banco-de-dados/script-remocao.sql"/>
+
+            <property name="jakarta.persistence.sql-load-script-source"
+                      value="META-INF/banco-de-dados/dados-iniciais.sql"/>
+
+            <property name="jakarta.persistence.schema-generation.scripts.action"
+                      value="none"/>
+            <property name="jakarta.persistence.schema-generation.scripts.create-target"
+                      value="C:/tmp/sql/script-criacao-exportado.sql"/>
+            <property name="jakarta.persistence.schema-generation.scripts.drop-target"
+                      value="C:/tmp/sql/script-remocao-exportado.sql"/>
 
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
 
