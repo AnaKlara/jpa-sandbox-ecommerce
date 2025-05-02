@@ -17,6 +17,7 @@ public class NotaFiscal extends EntidadeBaseInteger{
     private byte[] xml;
 
     @Column(name = "data_emissao", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date dataEmissao;
 
     @MapsId // já vem com o insertable e o updatable
