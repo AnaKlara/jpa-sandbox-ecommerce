@@ -21,7 +21,7 @@
                       value="metadata-then-script"/>
 
             <property name="jakarta.persistence.schema-generation.create-script-source"
-                      value="META-INF/databasesos/creation-script.sql"/>
+                      value="META-INF/databases/creation-script.sql"/>
             <property name="jakarta.persistence.schema-generation.drop-script-source"
                       value="META-INF/databases/drop-script.sql"/>
 
@@ -29,11 +29,11 @@
                       value="META-INF/databases/startup-data.sql"/>
 
             <property name="jakarta.persistence.schema-generation.scripts.action"
-                      value="none"/>
+                      value="drop-and-create"/>
             <property name="jakarta.persistence.schema-generation.scripts.create-target"
-                      value="/home/ana/Documents/sql_scripts/script-criacao-exportado.sql"/>
+                      value="/home/ana/Documents/sql_scripts/creation-script.sql"/>
             <property name="jakarta.persistence.schema-generation.scripts.drop-target"
-                      value="/home/ana/Documents/sql_scriptsscript-remocao-exportado.sql"/>
+                      value="/home/ana/Documents/sql_scripts/drop-script.sql"/>
 
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
 

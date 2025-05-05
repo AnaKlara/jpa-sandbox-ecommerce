@@ -10,6 +10,33 @@ import java.util.List;
 public class FunctionsTest extends EntityManagerTest {
 
     @Test
+    public void aplicarFuncaoAgregacao() {
+        // avg, count, min, max, sum
+
+        String jpql = "select sum(p.total) from Pedido p";
+
+        TypedQuery<Number> typedQuery = entityManager.createQuery(jpql, Number.class);
+
+        List<Number> lista = typedQuery.getResultList();
+        Assertions.assertFalse(lista.isEmpty());
+
+        lista.forEach(obj -> System.out.println(obj));
+    }
+
+    @Test
+    public void aplicarFuncaoCustomizada() {
+        String jpql = "select function('dayname', p.dataCriacao) from Pedido p " +
+                " where function('acima_media_faturamento', p.total) = 1";
+
+        TypedQuery<String> typedQuery = entityManager.createQuery(jpql, String.class);
+
+        List<String> lista = typedQuery.getResultList();
+        Assertions.assertFalse(lista.isEmpty());
+
+        lista.forEach(obj -> System.out.println(obj));
+    }
+
+    @Test
     public void aplicarFuncaoColecao() {
         String jpql = "select size(p.itens) from Pedido p where size(p.itens) > 1";
 
